@@ -98,7 +98,7 @@ namespace Second.Controllers
             List<CityWeather> cityWeather;
             if (twoHoursCutoff)
             {
-                cityWeather = await _context.CityWeather.Where(i => i.Time >= DateTimeOffset.Now.AddHours(-4))
+                cityWeather = await _context.CityWeather.Where(i => i.Time >= DateTimeOffset.Now.AddHours(-2))
                     .Include(x => x.CityNavigation)
                     .ToListAsync();
             }

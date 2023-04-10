@@ -66,6 +66,12 @@
 
 async function trend (e) {
     var trendResponse = await fetch("https://localhost:7054/api/cityweather/weatherTrendLastTwoHours");
+    var status = trendResponse.status;
+    console.log(status);
+    if (status == 400) {
+        alert("Error analyzing trends, probably not enough data!");
+        return;
+    }
     var data = await trendResponse.json();    
     alert("Average weather from all cities last two hours tells us that: \n Temperature is " + data.temperatureTrend + '\n' + " and windspeeed is " + data.windTrend );
 }
