@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to the weather portal</h1>
+    
+    <div>
+        <canvas id="minTemp"></canvas>
+    </div>
+    
+    <div>
+        <canvas id="windSpeed"></canvas>
+    </div>
+
+</div>
+
+@section Scripts
+{
+    <script type="module" src="~/js/weathercharts.js"></script>
+}
